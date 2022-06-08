@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
+import com.spacemooncake.findmovies.R
 import com.spacemooncake.findmovies.databinding.MainFragmentRecyclerItemBinding
 import com.spacemooncake.findmovies.model.entities.Film
 import com.spacemooncake.findmovies.ui.main.MainFragment
@@ -40,6 +41,8 @@ class MainFragmentAdapter(private val itemClickListener: MainFragment.OnItemView
             nameFilm.text = film.filmName
             dateFilm.text = film.filmDate
             rating.text = film.filmRating.toString()
+            like.setImageResource(R.drawable.like)
+            star.setImageResource(R.drawable.star)
         }
     }
 

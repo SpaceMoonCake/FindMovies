@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import com.spacemooncake.findmovies.R
 import com.spacemooncake.findmovies.databinding.MainFragmentBinding
 import com.spacemooncake.findmovies.model.AppState
@@ -31,7 +32,7 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        with(binding){
+        with(binding) {
             mainFragmentRecyclerView.adapter = adapter
             val observer = Observer<AppState> { renderData(it) }
             viewModel.liveData.observe(viewLifecycleOwner, observer)
@@ -40,17 +41,18 @@ class MainFragment : Fragment() {
     }
 
 
-    private fun renderData(appState: AppState) = with(binding){
-        when(appState){
+    private fun renderData(appState: AppState) = with(binding) {
+        when (appState) {
             is AppState.Success -> {
-                adapter = MainFragmentAdapter(object : OnItemViewClickListener{
+                adapter = MainFragmentAdapter(object : OnItemViewClickListener {
                     override fun onItemViewClick(film: Film) {
                         TODO("Not yet implemented")
                     }
-                }).apply{
+                }).apply {
                     setFilm(appState.filmData)
                 }
                 mainFragmentRecyclerView.adapter = adapter
+                mainFragmentRecyclerView.layoutManager = GridLayoutManager(context, 2)
             }
             is AppState.Loading -> {
                 //TODO
