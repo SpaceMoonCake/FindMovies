@@ -43,6 +43,7 @@ class MainFragmentAdapter(private val itemClickListener: MainFragment.OnItemView
             rating.text = film.filmRating.toString()
             like.setImageResource(R.drawable.like)
             star.setImageResource(R.drawable.star)
+            root.setOnClickListener{itemClickListener.onItemViewClick(film)}
         }
     }
 

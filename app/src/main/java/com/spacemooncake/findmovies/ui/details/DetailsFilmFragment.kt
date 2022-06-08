@@ -17,8 +17,7 @@ class DetailsFilmFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+    ): View {
         _binding = DetailsFilmFragmentBinding.inflate(inflater, container, false )
         return binding.root
     }
@@ -38,6 +37,7 @@ class DetailsFilmFragment : Fragment() {
             rating.text = film.filmRating.toString()
             like.setImageResource(R.drawable.like)
             star.setImageResource(R.drawable.star)
+            descriptionFilm.text = film.filmDescription
         }
     }
 

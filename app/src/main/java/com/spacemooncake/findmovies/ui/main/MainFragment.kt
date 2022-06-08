@@ -1,6 +1,5 @@
 package com.spacemooncake.findmovies.ui.main
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +12,7 @@ import com.spacemooncake.findmovies.databinding.MainFragmentBinding
 import com.spacemooncake.findmovies.model.AppState
 import com.spacemooncake.findmovies.model.entities.Film
 import com.spacemooncake.findmovies.ui.adapters.MainFragmentAdapter
+import com.spacemooncake.findmovies.ui.details.DetailsFilmFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
@@ -46,7 +46,7 @@ class MainFragment : Fragment() {
             is AppState.Success -> {
                 adapter = MainFragmentAdapter(object : OnItemViewClickListener {
                     override fun onItemViewClick(film: Film) {
-                        TODO("Not yet implemented")
+                        openFilmDetails(film)
                     }
                 }).apply {
                     setFilm(appState.filmData)
@@ -62,6 +62,19 @@ class MainFragment : Fragment() {
             }
         }
 
+    }
+
+    private fun openFilmDetails(film: Film){
+        val manager = activity?.supportFragmentManager
+        manager?.let{ manager ->
+            val bundle = Bundle().apply{
+                putParcelable(DetailsFilmFragment.BUNDLE_EXTRA, film)
+            }
+            manager.beginTransaction()
+                .add(R.id.container, DetailsFilmFragment.newInstance(bundle))
+                .addToBackStack("")
+                .commitAllowingStateLoss()
+        }
     }
 
     interface OnItemViewClickListener {
