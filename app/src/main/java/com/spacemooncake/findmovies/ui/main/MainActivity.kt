@@ -1,8 +1,8 @@
-package com.spacemooncake.findmovies
+package com.spacemooncake.findmovies.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.spacemooncake.findmovies.ui.main.MainFragment
+import com.spacemooncake.findmovies.R
 
 class MainActivity : AppCompatActivity() {
 

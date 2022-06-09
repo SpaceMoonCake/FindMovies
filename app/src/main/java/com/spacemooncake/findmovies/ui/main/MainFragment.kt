@@ -9,8 +9,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.spacemooncake.findmovies.R
 import com.spacemooncake.findmovies.databinding.MainFragmentBinding
-import com.spacemooncake.findmovies.model.AppState
-import com.spacemooncake.findmovies.model.entities.Film
+import com.spacemooncake.findmovies.domain.entities.AppState
+import com.spacemooncake.findmovies.domain.entities.Film
 import com.spacemooncake.findmovies.ui.adapters.MainFragmentAdapter
 import com.spacemooncake.findmovies.ui.details.DetailsFilmFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel

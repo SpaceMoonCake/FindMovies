@@ -1,9 +1,8 @@
-package com.spacemooncake.findmovies.model.entities
+package com.spacemooncake.findmovies.domain.entities
 
 import android.os.Parcelable
 import com.spacemooncake.findmovies.R
 import kotlinx.parcelize.Parcelize
-import java.util.*
 
 
 @Parcelize

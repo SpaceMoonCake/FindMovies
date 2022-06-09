@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.spacemooncake.findmovies.R
 import com.spacemooncake.findmovies.databinding.DetailsFilmFragmentBinding
-import com.spacemooncake.findmovies.model.entities.Film
+import com.spacemooncake.findmovies.domain.entities.Film
 
 class DetailsFilmFragment : Fragment() {
     private var _binding : DetailsFilmFragmentBinding? = null
