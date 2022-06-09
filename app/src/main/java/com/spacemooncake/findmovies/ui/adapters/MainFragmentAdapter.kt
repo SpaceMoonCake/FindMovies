@@ -4,11 +4,10 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import com.spacemooncake.findmovies.R
 import com.spacemooncake.findmovies.databinding.MainFragmentRecyclerItemBinding
-import com.spacemooncake.findmovies.model.entities.Film
+import com.spacemooncake.findmovies.domain.entities.Film
 import com.spacemooncake.findmovies.ui.main.MainFragment
 
 class MainFragmentAdapter(private val itemClickListener: MainFragment.OnItemViewClickListener) :
@@ -43,6 +42,7 @@ class MainFragmentAdapter(private val itemClickListener: MainFragment.OnItemView
             rating.text = film.filmRating.toString()
             like.setImageResource(R.drawable.like)
             star.setImageResource(R.drawable.star)
+            root.setOnClickListener{itemClickListener.onItemViewClick(film)}
         }
     }
 

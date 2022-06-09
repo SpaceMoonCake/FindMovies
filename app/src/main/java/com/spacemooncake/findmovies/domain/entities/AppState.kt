@@ -1,6 +1,4 @@
-package com.spacemooncake.findmovies.model
-
-import com.spacemooncake.findmovies.model.entities.Film
+package com.spacemooncake.findmovies.domain.entities
 
 sealed class AppState {
     data class Success(val filmData: List<Film>) : AppState()

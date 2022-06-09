@@ -1,6 +1,6 @@
-package com.spacemooncake.findmovies.model.repositopy
+package com.spacemooncake.findmovies.data.repositopy
 
-import com.spacemooncake.findmovies.model.entities.Film
+import com.spacemooncake.findmovies.domain.entities.Film
 
 class RepositoryImpl : Repository {
     override fun getFilmsFromServer() = listOf(
